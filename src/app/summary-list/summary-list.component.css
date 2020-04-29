@@ -1,0 +1,12 @@
+table {
+    width: 100%;
+  }
+
+.title-date {
+  text-align: center;
+}
+
+.info-table {
+  margin-right: 25px;
+  margin-left: 25px;
+}
