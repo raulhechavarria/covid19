@@ -1,9 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { Covid19Service } from '../serv/covid19.service';
 import { Summary } from '@angular/compiler';
 import { ISummary } from '../entity/Summary';
 import { ICountry } from '../entity/Country';
 import { IGlobal} from '../entity/Global';
+import {MatSort} from '@angular/material/sort';
+import { MatTableDataSource } from '@angular/material/table';
 
 @Component({
   selector: 'app-summary-list',
@@ -11,6 +13,8 @@ import { IGlobal} from '../entity/Global';
   styleUrls: ['./summary-list.component.css']
 })
 export class SummaryListComponent implements OnInit {
+  
+  @ViewChild(MatSort, {static: true}) sort: MatSort;
 
   summ: ISummary;
   date: Date
@@ -18,6 +22,8 @@ export class SummaryListComponent implements OnInit {
   countries : ICountry[];
   CountriesTemplate : ICountry[];
   global : IGlobal;
+  dataSource: any;
+
   constructor(private _info:Covid19Service) {}
 
   ngOnInit(): void {
@@ -36,7 +42,9 @@ export class SummaryListComponent implements OnInit {
       });
       this.countries = this.CountriesTemplate;
       this.countries.sort((a, b) =>  b.NewConfirmed - a.NewConfirmed)
-    });
 
+      this.dataSource = new MatTableDataSource(this.countries);
+      this.dataSource.sort = this.sort;
+    });
   }
 }

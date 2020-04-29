@@ -10,3 +10,7 @@ table {
   margin-right: 25px;
   margin-left: 25px;
 }
+
+th.mat-sort-header-sorted {
+  color: black;
+}
