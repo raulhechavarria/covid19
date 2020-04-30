@@ -14,6 +14,7 @@ import { ChartCountriesComponent } from './chart-countries/chart-countries.compo
 import { ChartsModule } from 'ng2-charts';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { FooterComponent } from './footer/footer.component';
+import { TotalComponent } from './total/total.component';
 
 
 @NgModule({
@@ -24,7 +25,8 @@ import { FooterComponent } from './footer/footer.component';
     SummaryList1Component,
     ChartCountriesComponent,
     PageNotFoundComponent,
-    FooterComponent
+    FooterComponent,
+    TotalComponent
   ],
   imports: [
     BrowserModule,

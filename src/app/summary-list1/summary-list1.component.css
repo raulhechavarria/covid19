@@ -1,3 +1,18 @@
-table {
+
+
+  table {
     width: 100%;
   }
+
+.title-date1 {
+  text-align: center;
+}
+
+.info-table1 {
+  margin-right: 25px;
+  margin-left: 25px;
+}
+
+th.mat-sort-header-sorted {
+  color: black;
+}

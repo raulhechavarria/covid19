@@ -7,12 +7,14 @@ import { SummaryListComponent } from './summary-list/summary-list.component';
 import { SummaryList1Component } from './summary-list1/summary-list1.component';
 import { ChartCountriesComponent} from './chart-countries/chart-countries.component'
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { TotalComponent } from './total/total.component';
 
 
 const routes: Routes = [
   
   {path:'',redirectTo: 'Summary', pathMatch: 'prefix'},
   //{path:'info1', component:Info1ListComponent},
+  {path:'Global', component:TotalComponent},
   {path:'Summary', component:SummaryListComponent},
   {path:'Summary1', component:SummaryList1Component},
   {path:'testgrafic', component:ChartCountriesComponent}
